@@ -1,1 +1,6 @@
-hi
+.row
+  %h1
+    hi
+
+- @art_pieces.each do |a|
+  <img src="http://#{a.momaUrl}">
