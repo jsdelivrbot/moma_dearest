@@ -1,6 +1,8 @@
-.row
-  %h1
-    hi
+.index-wrapper
+  .row
+    %h1
+      hi
 
-- @art_pieces.each do |a|
-  <img src="http://#{a.momaUrl}">
+  - @art_pieces.each do |a|
+    .col-xs-4.img-wrapper
+      <img src="http://#{a.momaUrl}">
