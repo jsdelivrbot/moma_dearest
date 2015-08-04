@@ -1,8 +1,10 @@
 .index-wrapper {
   padding: 0 70px;
-  background-color: red;
+  text-align: center;
+  .title {
+    padding-bottom: 20px; 
+  }
   .col-xs-4.img-wrapper {
-    background-color: blue;
     height: 400px;
   }
 }

@@ -1,8 +1,9 @@
 .index-wrapper
-  .row
+  .row.title
     %h1
-      hi
+      MoMA Dearest
 
   - @art_pieces.each do |a|
     .col-xs-4.img-wrapper
       <img src="http://#{a.momaUrl}">
+  = paginate @art_pieces

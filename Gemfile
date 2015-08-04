@@ -13,6 +13,9 @@ gem 'bootstrap-sass', '>=3.2'
 # Scrape images off of MoMA site
 gem 'nokogiri', '~>1.6.6.2'
 
+# Scope and paginate
+gem 'kaminari', '~>0.16.3'
+
 # User haml for markup
 gem 'haml-rails', '~>0.9'
 
