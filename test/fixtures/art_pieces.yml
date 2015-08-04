@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: art_pieces
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  artist     :string(255)
+#  medium     :string(255)
+#  momaUrl    :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  artist: MyString
+  medium: MyString
+  momaUrl: MyString
+
+two:
+  title: MyString
+  artist: MyString
+  medium: MyString
+  momaUrl: MyString
