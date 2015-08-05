@@ -6,23 +6,19 @@ namespace :art_pieces do
   desc "TODO"
   task populate: :environment do
     CSV.new(open("https://raw.githubusercontent.com/MuseumofModernArt/collection/master/Artworks.csv"), headers: :first_row).each do |row|
-      if row[-1].nil?
-        p ArtPiece.create(title: row[0], artist: row[1], medium: row[4], momaUrl: nil)
-      else
+      piece = ArtPiece.find_by_moma_num(row[7]) || ArtPiece.new(title: row[0], artist: row[1], medium: row[4], moma_url: nil, moma_num: row[7])
+      piece.assign_attributes(title: row[0], artist: row[1], medium: row[4], moma_url: nil, moma_num: row[7])
+        
+      if row[-1].to_s.include?("http")
         url = row[-1]
         doc = Nokogiri::HTML(open(url))
-        if doc.at_css('.sov-hero img')['srcset'].nil?
-          image_url = nil
-        else
+        if doc.at_css('.sov-hero img')['srcset'].present?
           image_url = "www.moma.org" + doc.at_css('.sov-hero img')['srcset'].split(" ").first
+          piece.moma_url = image_url
         end
-        p ArtPiece.create(title: row[0], artist: row[1], medium: row[4], momaUrl: image_url)
       end
+      piece.save
     end
-  end
-
-  desc "TODO"
-  task check: :environment do
   end
 
 end

@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801171232) do
+ActiveRecord::Schema.define(version: 20150804230546) do
 
   create_table "art_pieces", force: true do |t|
     t.string   "title"
     t.string   "artist"
     t.string   "medium"
-    t.string   "momaUrl"
+    t.string   "moma_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "moma_num",   limit: nil
   end
 
 end

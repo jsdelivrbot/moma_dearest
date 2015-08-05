@@ -1,5 +1,5 @@
 class ArtPiecesController < ApplicationController
   def index
-    @art_pieces = ArtPiece.all.page(params[:page])
+    @art_pieces = ArtPiece.page(params[:page])
   end
 end

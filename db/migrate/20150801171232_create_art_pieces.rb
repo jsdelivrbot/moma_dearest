@@ -4,7 +4,7 @@ class CreateArtPieces < ActiveRecord::Migration
       t.string :title
       t.string :artist
       t.string :medium
-      t.string :momaUrl
+      t.string :moma_url
 
       t.timestamps
     end
