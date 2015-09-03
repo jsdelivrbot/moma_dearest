@@ -18,6 +18,7 @@ namespace :art_pieces do
         end
       end
       piece.save
+      p piece
     end
   end
 

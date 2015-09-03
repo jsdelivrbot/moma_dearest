@@ -12,5 +12,7 @@
 #
 
 class ArtPiece < ActiveRecord::Base
+  include PgSearch
+  multisearchable against: [:title, :artist]
   paginates_per 12
 end
